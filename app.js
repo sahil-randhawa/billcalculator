@@ -163,16 +163,6 @@ const calcButtonPressed = () => {
   }
 
 
-  // if( custName === "" ){
-
-  // }else if (custEmail === "" ){
-
-  // } else if(isNaN(unitsMorning)){
-
-  // } else if(custProvince === ""){
-
-  // }
-
 
 
   // calculate the bill amount
@@ -185,7 +175,7 @@ const calcButtonPressed = () => {
   const solarDiscount =
     Math.round((custSolar ? costTotal * 0.2 : 0) * 100) / 100;
   const provinceCredit = custProvince === "British_Columbia" ? 50 : 0;
-  const subTotal = (costTotal - solarDiscount - provinceCredit) >= 0 ? (costTotal - solarDiscount - provinceCredit) : 0;
+  const subTotal = Math.round(((costTotal - solarDiscount - provinceCredit) >= 0 ? (costTotal - solarDiscount - provinceCredit) : 0)*100)/100;
   const tax =
     Math.round(
       (custProvince === "British_Columbia"
