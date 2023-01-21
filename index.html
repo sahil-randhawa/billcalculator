@@ -5,80 +5,92 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Electricity</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <form>
+      <div class="formgrid">
       <h1>Calculate your Electricity bill</h1>
       <!-- Customer Name -->
-      <label for="custName">Customer Name *</label>
-      <input type="text" id="custName" />
-      <br />
+      <label for="custName">Customer Name <span>*</span><label id="e-name" class="error">Required</label></label>
+      <input type="text" id="custName"  placeholder="Enter your name here"/>
 
       <!-- Customer Email -->
-      <label for="custEmail">Customer Email *</label>
-      <input type="email" id="custEmail" />
-      <br />
+      <label for="custEmail">Customer Email <span>*</span><label id="e-email" class="error">Required</label></label>
+      <input type="email" id="custEmail" placeholder="Enter your email address here"/>
 
       <!-- Electricity used in Morning -->
       <label for="unitsMorning"
-        >Amount of electricity used in the morning, in kilowatt hours
-        (kwh) *</label
+        >Amount of electricity used in the morning, in kilowatt hours (kwh) <span>*</span><label id="e-unitsM" class="error">Required</label></label
       >
-      <input type="number" id="unitsMorning" min="0"/>
-      <br />
+      <input type="number" id="unitsMorning" min="0"  placeholder="0"/>
 
       <!-- Electricity used in Afternoon -->
       <label for="unitsAfternoon"
         >Amount of electricity used in the afternoon, in kilowatt hours
-        (kwh)</label
+        (kwh)<label id="e-unitsA" class="error">Required</label></label
       >
-      <input type="number" id="unitsAfternoon" min="0"/>
-      <br />
+      <input type="number" id="unitsAfternoon" min="0"  placeholder="0"/>
 
       <!-- Electricity used in Evening -->
       <label for="unitsEvening"
         >Amount of electricity used in the evening, in kilowatt hours
-        (kwh)</label
+        (kwh)<label id="e-unitsE" class="error">Required</label></label
       >
-      <input type="number" id="unitsEvening" min="0"/>
-      <br />
+      <input type="number" id="unitsEvening" min="0" placeholder="0"/>
 
       <!-- Customer Province -->
-      <label for="custProvince">Customer Province *</label>
-      <select name="custProvince" id="custProvince" >
-        <option value="">- Select your Province-</option>
+      <label for="custProvince">Customer Province <span>*</span><label id="e-province" class="error">Required</label></label>
+      <select name="custProvince" id="custProvince">
+        <option value=""> Select your Province </option>
         <option value="Alberta">Alberta</option>
         <option value="Quebec">Quebec</option>
         <option value="British_Columbia">British Columbia</option>
       </select>
-      <br />
-
+    </div>
       <!-- Solar customer -->
       <input type="checkbox" name="custSolar" id="custSolar" />
-      <label for="custSolar">My home uses solar energy</label>
-      <br />
+      <label for="custSolar">My home uses solar energy</label><br/>
 
       <!-- Calculate button  -->
       <button id="btn-calc" type="button">Calculate</button>
     </form>
 
     <section id="receipt">
-        <h1> Your electricity bill :</h1>
-        <label>Name:</label><label id="rct-name"></label>
-        <br/>
-        <label>Email:</label><label id="rct-email"></label>
-        <br/>
-        <label>Morning  charges:</label><label id="rct-costMorning"></label>
-        <br/>
-        <label>Afternnon  charges:</label><label id="rct-costAfternoon"></label>
-        <br/>
-        <label>Evening  charges:</label><label id="rct-costEvening"></label>
-        <br/>
-        <label>Total usage charges:</label><label id="rct-subTotal"></label>
-        <br/>
-        <!-- continue here -->
-        
+      <h1>Your electricity bill :</h1>
+      <p><label>Name : </label><label id="rct-name"></label>
+      <br /></p>
+      <p><label>Email : </label><label id="rct-email"></label></p>
+      <div class="rct-grid-container">
+        <hr />
+        <label><strong>Category</strong></label><label><strong>Amount ($)</strong></label>
+        <hr>
+        <label>Morning charges:</label><label id="rct-costMorning">--</label>
+        <!-- <br/> -->
+        <label>Afternnon charges:</label
+        ><label id="rct-costAfternoon">--</label>
+        <!-- <br/> -->
+        <label>Evening charges:</label><label id="rct-costEvening">--</label>
+        <!-- <br/> -->
+        <label>Total usage charges:</label><label id="rct-costTotal">--</label>
+        <!-- <br/> -->
+        <label>Solar Energy Discount Amount: </label
+        ><label id="rct-solarDiscount">--</label>
+        <!-- <br/> -->
+        <label>Provincial Credit:</label
+        ><label id="rct-provinceCredit">--</label>
+        <!-- <br/> -->
+        <label>Subtotal:</label><label id="rct-subTotal">--</label>
+        <!-- <br/> -->
+        <label>Tax:</label><label id="rct-tax">--</label>
+        <!-- <br/> -->
+        <label>Final Total:</label><label id="rct-finalTotal">--</label>
+        <!-- <br/> -->
+      </div>
+      <button id="btn-startover">Start Over</button>
     </section>
     <!-- link app.js -->
     <script type="text/javascript" src="./app.js"></script>

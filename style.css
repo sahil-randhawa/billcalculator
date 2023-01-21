@@ -1,44 +1,133 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-family: 'Roboto', sans-serif;
+  font-size: 18px;
 }
+
+/* main form */
+
 form {
-    max-width: 1000px;
-    border: 2px solid blueviolet;
-    padding: 20px;
-
-    /* display: grid;
-    grid-template-columns: 50% 50%; */
-}
-
-h1 {
-    text-align: center;
-    
+  max-width: 1000px;
+  padding: 20px;
+  background: rgb(234, 227, 240);
+  border-radius: 5px;
+  /* display: none; */
 }
 
 form * {
-    margin: 20px;
+  margin: 20px;
 }
+
+.formgrid {
+  display: grid;
+  grid-template-columns: repeat(2, 50%);
+  grid-auto-rows: 1fr;
+  justify-content: center;
+  margin: 0;
+}
+
+.formgrid > input,
+.formgrid >select {
+  border-radius: 5px;
+  border: 1px solid lightgrey;
+  padding: 0 10px;
+}
+.formgrid > *:first-child {
+  grid-column: 1/3;
+}
+
+h1 {
+  margin: 15px 0;
+  text-align: center;
+  color: blueviolet;
+  font-family: 'Chakra Petch', sans-serif;
+}
+
+#custSolar {
+    width: 20px;
+    height: 20px;
+    position: relative;
+    top:4px;
+    margin-right: 0;
+}
+
+form span {
+    color: rgb(247, 133, 133);
+    margin:0;
+}
+
+/* button common */
 
 button {
-    padding: 10px 20px;
+  padding: 10px 20px;
+  margin-top: 20px;
+  font-size: 18px;
+  border-radius: 5px;
+  border: 0;
+  background-color: #8a2be2;
+  color: white;
 }
 
-form {
-    display: none;
+button:hover {
+  background-color: #9F50E7;
+  cursor: pointer;
 }
+
+
+/* receipt */
 
 section#receipt {
-    /* display: none; */
-    border: 1px solid green;
-    padding: 20px;
+    /* display none here */  
+    display: none;
+  padding: 20px;
+  position: relative;
+  background-color: rgb(234, 227, 240) ;
+  border-radius: 5px;
+}
+section#receipt  > h1 {
+    margin: 20px 0;
+}
+section#receipt > p {
+  margin: 8px 0;
+}
+
+section#receipt > div {
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  gap: 10px 5vw;
+  justify-content: space-between;
+  margin-top: 15px;
+}
+section#receipt > div > *:nth-child(1),
+section#receipt > div > *:nth-child(4) {
+  grid-column: 1 / 3;
+}
+section#receipt > div > *:nth-child(3),
+section#receipt > div *:nth-child(2n + 4) {
+  text-align: right;
+}
+
+/* error message */
+.error {
+    font-size: 12px;
+    background-color: rgb(247, 133, 133);
+    color: rgb(255, 255, 255);
+    padding: 2px 5px;
+    border-radius: 8px;
+    letter-spacing: 1px;
+}
+
+#e-name,#e-email, #e-unitsM, #e-unitsA, #e-unitsE, #e-province {
+    margin: 10px;
+    display: none;
 }
