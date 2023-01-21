@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Electricity</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <form>
+      <h1>Calculate your Electricity bill</h1>
+      <!-- Customer Name -->
+      <label for="custName">Customer Name *</label>
+      <input type="text" id="custName" />
+      <br />
+
+      <!-- Customer Email -->
+      <label for="custEmail">Customer Email *</label>
+      <input type="email" id="custEmail" />
+      <br />
+
+      <!-- Electricity used in Morning -->
+      <label for="unitsMorning"
+        >Amount of electricity used in the morning, in kilowatt hours
+        (kwh) *</label
+      >
+      <input type="number" id="unitsMorning" min="0"/>
+      <br />
+
+      <!-- Electricity used in Afternoon -->
+      <label for="unitsAfternoon"
+        >Amount of electricity used in the afternoon, in kilowatt hours
+        (kwh)</label
+      >
+      <input type="number" id="unitsAfternoon" min="0"/>
+      <br />
+
+      <!-- Electricity used in Evening -->
+      <label for="unitsEvening"
+        >Amount of electricity used in the evening, in kilowatt hours
+        (kwh)</label
+      >
+      <input type="number" id="unitsEvening" min="0"/>
+      <br />
+
+      <!-- Customer Province -->
+      <label for="custProvince">Customer Province *</label>
+      <select name="custProvince" id="custProvince" >
+        <option value="">- Select your Province-</option>
+        <option value="Alberta">Alberta</option>
+        <option value="Quebec">Quebec</option>
+        <option value="British_Columbia">British Columbia</option>
+      </select>
+      <br />
+
+      <!-- Solar customer -->
+      <input type="checkbox" name="custSolar" id="custSolar" />
+      <label for="custSolar">My home uses solar energy</label>
+      <br />
+
+      <!-- Calculate button  -->
+      <button id="btn-calc" type="button">Calculate</button>
+    </form>
+
+    <section id="receipt">
+        <h1> Your electricity bill :</h1>
+        <label>Name:</label><label id="rct-name"></label>
+        <br/>
+        <label>Email:</label><label id="rct-email"></label>
+        <br/>
+        <label>Morning  charges:</label><label id="rct-costMorning"></label>
+        <br/>
+        <label>Afternnon  charges:</label><label id="rct-costAfternoon"></label>
+        <br/>
+        <label>Evening  charges:</label><label id="rct-costEvening"></label>
+        <br/>
+        <label>Total usage charges:</label><label id="rct-subTotal"></label>
+        <br/>
+        <!-- continue here -->
+        
+    </section>
+    <!-- link app.js -->
+    <script type="text/javascript" src="./app.js"></script>
+  </body>
+</html>

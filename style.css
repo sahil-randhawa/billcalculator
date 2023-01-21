@@ -1,0 +1,44 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+form {
+    max-width: 1000px;
+    border: 2px solid blueviolet;
+    padding: 20px;
+
+    /* display: grid;
+    grid-template-columns: 50% 50%; */
+}
+
+h1 {
+    text-align: center;
+    
+}
+
+form * {
+    margin: 20px;
+}
+
+button {
+    padding: 10px 20px;
+}
+
+form {
+    display: none;
+}
+
+section#receipt {
+    /* display: none; */
+    border: 1px solid green;
+    padding: 20px;
+}
