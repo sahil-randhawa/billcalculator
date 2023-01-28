@@ -12,5 +12,7 @@ Live Demo: https://sahil-randhawa.github.io/billcalculator/
 - Vanila Javascript
 
 ### Features:
+- Web forms
 - Form field validation using vanila javascript.
+- CSS Grids for responsive layout
 - Semantic HTML structure.
